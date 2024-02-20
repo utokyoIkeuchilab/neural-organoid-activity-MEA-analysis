@@ -10,23 +10,13 @@ Fs=20000;
 
 %% Load and import data
 
-filename = 'C:\Users\Tomoya\Projects\complex_activity_data_analysis\data\c2_d57_s3.csv';
-delimiter = ',';
-startRow = 4;
-formatSpec = '%f%f%f%f%f%f%f%f%f%[^\n\r]';
-
-fileID = fopen(filename,'r');
-textscan(fileID, '%[^\n\r]', startRow-1, 'WhiteSpace', '', 'ReturnOnError', false, 'EndOfLine', '\r\n');
-dataArray = textscan(fileID, formatSpec, 'Delimiter', delimiter, 'TextType', 'string', 'EmptyValue', NaN, 'ReturnOnError', false);
-fclose(fileID);
-Signal = [dataArray{1:end-1}];
-clearvars  filename delimiter startRow formatSpec fileID dataArray ans;
+Signal = struct2array(load('C:\Users\Tomoya\Projects\complex_activity_data_analysis\data\example_trace.mat'));
 
 %% Preprocess data process
 tic
-electode_position=[15 16 22 24 55 56 62 63];
+electode_position=[55 56 62 63];
 
-num_electrode=8;
+num_electrode=4;
 time=[2: -0.05: -1];
 t = rot90(time);
 %/////////////////////
@@ -52,7 +42,7 @@ toc
 %Burst determination
 bin_win= 100;%msec
 burst_th=5;
-visual_on=1;
+visual_on=0;
 
 tic
 [burst_locs, burst_spikes, All_interburst_interval_sec, Mean_burst_frequency, dev_interburst_interval, CV]=burst_detection(Fs, time_ms, num_electrode, LP_Signal_fix, HP_Signal_fix, All_spikes, bin_win, burst_th,visual_on);
@@ -62,7 +52,7 @@ toc
 %% Neuronal avalcnhes (need spike detection first)
 
 def_avalanch_ms=3;
-[logx, Avalanches_probability]=neuronal_avalanches(All_spikes(5:8,:), def_avalanch_ms);
+[logx, Avalanches_probability]=neuronal_avalanches(All_spikes, def_avalanch_ms);
 
 
 %% Wavelet_transformation
@@ -82,8 +72,8 @@ toc
 %/////////////////////
 t1 = 1; 
 t2 = 30000;
-e1=6;
-e2=7;
+e1=2;
+e2=3;
 Downsample_rate=20;
 PhaseDisplayThreshold=1;
 %//////////////////////
@@ -107,14 +97,14 @@ toc
 %% Local Phase-amplitude coupling
 t1 = 1; 
 t2 = 500000; 
-electrode=5;
+electrode=3;
 [MI_delta_gamma,MI_theta_gamma,MI_delta_theta, MI_delta_delta, MI_theta_theta, MI_gamma_gamma]=PAC(Fs, time_ms,LP_Signal_fix,t1, t2,electrode);
 
 %%  Inter-regional Phase-amplitude coupling
 
 t1 = 1; 
 t2 = 500000; 
-e1=5;
-e2=7;
+e1=1;
+e2=4;
 irPAC(Fs, time_ms, LP_Signal_fix,t1, t2, e1, e2);
 

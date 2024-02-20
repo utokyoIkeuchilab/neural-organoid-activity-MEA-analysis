@@ -5,6 +5,7 @@ This repository contains custom codes used for the Multi electrode array (MEA) d
 Complex Activity and Short-Term Plasticity of Human Cerebral Organoids Reciprocally Connected with Axons
 
 by
+
 Tatsuya Osaki (1,2,9) Tomoya Duenki (1,2,3,5,9), Siu Yu A. Chow (1,2,9), Yasuhiro Ikegami(1,2), Romain Beaubois (1,4,5), Timothée Levi (1,4,5), Nao Nakagawa-Tamagawa (6), Yoji Hirano (1,7,8), Yoshiho Ikeuchi (1,2,3,5*)
 
 1 Institute of Industrial Science, The University of Tokyo, Meguro, Tokyo 153-8505, Japan.
