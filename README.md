@@ -1,4 +1,4 @@
-# complex_activity_data_analysis
+# neural-organoid-activity-MEA-analysis
 
 This repository contains custom codes used for the Multi electrode array (MEA) data analysis for the paper:
 
