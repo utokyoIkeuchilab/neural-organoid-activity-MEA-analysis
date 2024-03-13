@@ -15,7 +15,7 @@ Tatsuya Osaki (1,2,9) Tomoya Duenki (1,2,3,5,9), Siu Yu A. Chow (1,2,9), Yasuhir
 5 LIMMS/CNRS, Institute of Industrial Science, The University of Tokyo, Tokyo, Japan
 6 Department of Physiology, Graduate School of Medical and Dental Sciences, Kagoshima University, Kagoshima, Japan
 7 Department of Neuropsychiatry, Graduate School of Medical Sciences, Kyushu University, Fukuoka, Japan
-8 Department of Psychiatry, Faculty of Medicine, University of Miyazaki, Japan
+8 Department of Psychiatry, Division of Clinical Neuroscience, Faculty of Medicine, University of Miyazaki, Miyazaki, Japan
 9 Equal contribution
 
 
@@ -25,7 +25,8 @@ It contains:
 - Burst detection
 - Neuronal avalanches
 - Wavelet transformation and coherence
+- Integral Power
 - Phase-amplitude coupling
 
 
-All analysis were performed using MATLAB 2020a. The main script main.m computes the above.
+All analysis were performed using MATLAB 2020a. Example signal trace from a recording can be found and analyzed using the main script main.m to compute the parameters above. 
