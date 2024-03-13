@@ -24,9 +24,7 @@ tic
 for i=1:num_electrode
     STDEV=std(HP_Signal_fix(:,i));
     peak_th=mag*STDEV;
-    %%[posspks, poslocs] = findpeaks(HP_Signal_fix(:,i), Fs,'MinPeakHeight',peak_th );
-        [posspks, poslocs] = findpeaks(HP_Signal_fix(:,i), Fs,'MinPeakHeight',peak_th, 'MinPeakDistance',0.005, 'Threshold',1, 'MinPeakProminence',1 );
-
+    [posspks, poslocs] = findpeaks(HP_Signal_fix(:,i), Fs,'MinPeakHeight',peak_th );
     [negspks, neglocs] = findpeaks(-HP_Signal_fix(:,i), Fs,'MinPeakHeight',peak_th );
     
     all_locs=vertcat(poslocs,neglocs);
@@ -69,6 +67,8 @@ for i=1:num_electrode
         yline(-peak_th,'r');
         xlim([0 30]);
         hold off
+        ylabel('Amplitude (mV)')
+        xlabel('Time (sec)')
      end
 
 

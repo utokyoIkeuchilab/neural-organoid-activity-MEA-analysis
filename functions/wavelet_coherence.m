@@ -37,7 +37,6 @@ tic
     ax = gca;
     ytick=round(pow2(ax.YTick),3);
     ax.YTickLabel=ytick;
-    ax.XLabel.String='Time';
     ax.YLabel.String='Frequency (Hz)';
     ax.Title.String = 'Wavelet Coherence';
     % colormap(flipud(hot))

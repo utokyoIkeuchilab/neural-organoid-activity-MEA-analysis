@@ -44,13 +44,12 @@ for i=1:num_electrode
     
     subplot(212)
     [minf,maxf] = cwtfreqbounds(numel(DS_LP_Signal_lim),dFs);
-    tms = (0:numel(DS_LP_Signal_lim)-1)/dFs;
     AX = gca;
     freq = 2.^(round(log2(minf)):round(log2(maxf)));
     AX.YTickLabelMode = 'auto';
     AX.YTick = freq;
     caxis([0 0.03])
-    surface(tms,f,abs(wt));
+    surface(DS_time_ms_lim/1000,f,abs(wt));
     axis tight
     shading flat
     xlabel('Time (s)')

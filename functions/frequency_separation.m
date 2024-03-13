@@ -35,18 +35,19 @@ for i=1:num_electrode
     
     subplot(511)
     plot(DS_time_ms_lim, LP_Signal_fix_single_lim,'LineWidth', 0.5)
-    title('Original LFP Right orgnoid')
+    title('Original LFP')
     set(gca,'ytick',[]);
     set(gca,'ycolor',[1 1 1])
     set(gca,'xtick',[]);
     set(gca,'xcolor',[1 1 1])
+    %ylim([-0.08 0.08])
     xlim([min(DS_time_ms_lim) max(DS_time_ms_lim)])
 
     
     subplot(512)
     plot(DS_time_ms_lim, xrec1, 'LineWidth', 0.75)
     title('Bandpass Filtered Reconstruction [0.2-0.5] Hz')
-    ylim([-0.02 0.02])
+    ylim([-0.08 0.08])
     xlim([min(DS_time_ms_lim) max(DS_time_ms_lim)])
     set(gca,'ytick',[]);
     set(gca,'ycolor',[1 1 1])
@@ -56,7 +57,7 @@ for i=1:num_electrode
     subplot(513)
     plot(DS_time_ms_lim, xrec2, 'LineWidth', 0.75)
     title('Delta wave [0.5-4] Hz')
-    ylim([-0.03 0.03])
+    ylim([-0.08 0.08])
     xlim([min(DS_time_ms_lim) max(DS_time_ms_lim)])
 
     set(gca,'ytick',[]);
@@ -67,30 +68,19 @@ for i=1:num_electrode
     subplot(514)
     plot(DS_time_ms_lim, xrec3, 'LineWidth', 0.75)
     title('Theta wave [4-8] Hz')
-    ylim([-0.01 0.01])
+    ylim([-0.08 0.08])
     xlim([min(DS_time_ms_lim) max(DS_time_ms_lim)])
 
     set(gca,'ytick',[]);
     set(gca,'ycolor',[1 1 1])
     set(gca,'xtick',[]);
     set(gca,'xcolor',[1 1 1])
-     
-%     subplot(715)
-%     plot(time_ms_lim, xrec4)
-%     title('Alpha w]ave [8-12] Hz')
-% %     ylim([-0.001 0.001])
-% 
-%     subplot(716)
-%     plot(time_ms_lim, xrec5)
-%     title('Beta [12-30] Hz')
-%     xlabel('Time (msec)')
-% %     ylim([-0.001 0.001])
-%     
+  
     subplot(515)
     plot(DS_time_ms_lim, xrec6, 'LineWidth', 0.5)
     title('Gamma wave [30-300] Hz')
     xlabel('Time (msec)')
-    ylim([-0.02 0.02])
+    ylim([-0.08 0.08])
     xlim([min(DS_time_ms_lim) max(DS_time_ms_lim)])
 
     set(gca,'ytick',[]);

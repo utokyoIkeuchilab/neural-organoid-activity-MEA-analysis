@@ -136,7 +136,7 @@ bar([rad2deg(binCenters_deltaL_thetaR)+200 rad2deg(binCenters_deltaL_thetaR+2*pi
 title('Delta L/Theta R');
 ylabel('Moduation Index');
 
-disp("Modulatio Index");
+disp("Modulation Index");
 disp([MI_deltaR_gammaR MI_deltaR_gammaL MI_deltaL_gammaR ]);
 disp([MI_thetaR_gammaR MI_thetaR_gammaL MI_thetaL_gammaR ]);
 disp([MI_deltaR_thetaR MI_deltaR_thetaL MI_deltaL_thetaR ]);

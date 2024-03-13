@@ -90,6 +90,6 @@ bar([rad2deg(binCenters_gamma_gamma)+200 rad2deg(binCenters_gamma_gamma+2*pi)+20
 title('Local PAC (gamma phase/gamma amp)');
 ylabel('Moduation Index');
 
-disp("Modulatio Index");
+disp("Modulation Index");
 disp([MI_delta_gamma MI_theta_gamma MI_delta_theta]);
 disp([MI_delta_delta MI_theta_theta MI_gamma_gamma]);
